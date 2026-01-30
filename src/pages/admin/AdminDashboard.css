@@ -1,0 +1,162 @@
+/* ===== Base Styles ===== */
+.admin-dashboard {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 20px;
+}
+
+/* ===== Header ===== */
+.dashboard-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-intro h1 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.dashboard-intro p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== Tabs ===== */
+.admin-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.admin-tabs button {
+  padding: 10px 20px;
+  background-color: #e6f0ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.admin-tabs button.active {
+  background-color: #004080;
+  color: #fff;
+}
+
+.admin-tabs button:hover:not(.active) {
+  background-color: #cce0ff;
+}
+
+/* ===== Content ===== */
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Quick Stats ===== */
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: #fff;
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card h3 {
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* ===== Dashboard Info ===== */
+.dashboard-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-info h2 {
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+.dashboard-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-info li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* ===== Footer ===== */
+.dashboard-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 15px;
+  color: #fff;
+  background-color: #004080;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .quick-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 90%;
+  }
+}
+/* ===== Dashboard News ===== */
+.dashboard-news, .dashboard-tasks {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+.dashboard-news h2, .dashboard-tasks h2 {
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+.dashboard-news ul, .dashboard-tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-news li, .dashboard-tasks li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
