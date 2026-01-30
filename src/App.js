@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import Navbar from './components/layout/Navbar';
-
+import AdminDashboard from './pages/admin/AdminDashboard'
 // صفحات المصادقة
 import Login from './pages/auth/login';
 
@@ -17,16 +17,11 @@ import Schedule from './pages/student/Schedule';
 import InstructorDashboard from './pages/instructor/InstructorDashboard';
 import InstructorCourses from './pages/instructor/InstructorCourses';
 import InstructorGrades from './pages/instructor/InstructorGrades';
-//admin pages
+// CSS
+import './App.css';
 import UserManagement from './pages/admin/UserManagement';
 import Reports from './pages/admin/Reports';
-//import AdminProfile from './pages/admin/AdminProfile';
-//import CourseManagement from './pages/admin/CourseManagement';
-import AdminProfile from './pages/admin/Profile';
-// CSS
-
-import './App.css';
-
+import CourseManagement from './pages/admin/CourseManagement';
 function App() {
   return (
     <AuthProvider>
@@ -106,14 +101,13 @@ function App() {
     </ProtectedRoute>
   } 
 />
-
-<Route 
-  path="/instructor/grades" 
+<Route
+  path="/admin"
   element={
-    <ProtectedRoute allowedRoles={['instructor']}>
-      <InstructorGrades />
+    <ProtectedRoute allowedRoles={['admin']}>
+      <AdminDashboard />
     </ProtectedRoute>
-  } 
+  }
 />
 {/* صفحات المدير */}
 <Route 
@@ -124,7 +118,14 @@ function App() {
     </ProtectedRoute>
   } 
 />
-
+<Route 
+  path="/admin/courses" 
+  element={
+    <ProtectedRoute allowedRoles={['admin']}>
+      <CourseManagement />
+    </ProtectedRoute>
+  } 
+/>
 <Route 
   path="/admin/reports" 
   element={
@@ -133,17 +134,16 @@ function App() {
     </ProtectedRoute>
   } 
 />
-        <Route 
-          path="/admin/profile" 
-          element={
-            <ProtectedRoute>
-              <AdminProfile />
-            </ProtectedRoute>
-          } 
-        />
 
 
-
+<Route 
+  path="/instructor/grades" 
+  element={
+    <ProtectedRoute allowedRoles={['instructor']}>
+      <InstructorGrades />
+    </ProtectedRoute>
+  } 
+/>
               
               {/* صفحة 404 */}
               <Route 
@@ -162,5 +162,4 @@ function App() {
     </AuthProvider>
   );
 }
-
 export default App;
